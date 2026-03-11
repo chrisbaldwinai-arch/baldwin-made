@@ -1,0 +1,14 @@
+<svg width="200" height="160" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon centered -->
+  <g transform="translate(60, 0)">
+    <circle cx="40" cy="40" r="37" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <circle cx="40" cy="40" r="33" stroke="#ffffff" stroke-width="0.4" fill="none" opacity="0.2"/>
+    <path d="M28 20 L28 60" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+    <path d="M28 20 L40 20 Q52 20 52 30 Q52 39 40 40 L28 40" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M28 40 L42 40 Q55 40 55 50 Q55 60 42 60 L28 60" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="42" cy="40" r="1.5" fill="#d4ecd5"/>
+  </g>
+  <!-- Text centered -->
+  <text x="100" y="112" font-family="'Libre Baskerville', 'Georgia', serif" font-size="28" font-weight="700" fill="#ffffff" letter-spacing="1" text-anchor="middle">Baldwin</text>
+  <text x="100" y="135" font-family="'Raleway', 'Helvetica Neue', sans-serif" font-size="10" font-weight="300" fill="#d4ecd5" letter-spacing="7" text-anchor="middle">MADE</text>
+</svg>

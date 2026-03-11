@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ─── Design Tokens ──────────────────────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-deep-pine:    #1E3A1E;
+  --color-kelly:        #4CAF50;
+  --color-spring:       #72C976;
+  --color-light-kelly:  #A8E0AA;
+  --color-meadow:       #D4ECD5;
+  --color-cloud:        #F5F7F4;
+  --color-white:        #FFFFFF;
+  --color-mist:         #E4ECE4;
+  --color-stone:        #88B88A;
+  --color-charcoal:     #2D4A2D;
+
+  /* Font families (CSS vars set by next/font in layout.tsx) */
+  --font-display: var(--font-cormorant);
+  --font-heading: var(--font-baskerville);
+  --font-body:    var(--font-raleway);
+
+  /* Fluid type scale */
+  --text-xs:   clamp(0.70rem,  0.68rem + 0.09vw, 0.75rem);
+  --text-sm:   clamp(0.80rem,  0.77rem + 0.14vw, 0.875rem);
+  --text-base: clamp(0.938rem, 0.91rem + 0.13vw, 1rem);
+  --text-lg:   clamp(1.10rem,  1.02rem + 0.38vw, 1.25rem);
+  --text-xl:   clamp(1.25rem,  1.10rem + 0.73vw, 1.50rem);
+  --text-2xl:  clamp(1.50rem,  1.25rem + 1.22vw, 2rem);
+  --text-3xl:  clamp(1.875rem, 1.45rem + 2.10vw, 2.75rem);
+  --text-4xl:  clamp(2.25rem,  1.65rem + 2.85vw, 3.5rem);
+  --text-5xl:  clamp(2.75rem,  1.85rem + 4.39vw, 4.5rem);
+
+  /* Border radius */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   20px;
+  --radius-pill: 9999px;
+
+  /* Section spacing */
+  --space-section: clamp(4rem, 8vw, 8rem);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Base Styles ────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  font-size: var(--text-base);
+  line-height: 1.75;
+  color: var(--color-deep-pine);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Skip Navigation (WCAG 2.4.1) ──────────────────────────── */
+.skip-nav {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--color-kelly);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-nav:focus {
+  top: 1rem;
+}
+
+/* ─── Focus Rings (WCAG 2.4.13) ─────────────────────────────── */
+:focus-visible {
+  outline: 3px solid var(--color-light-kelly);
+  outline-offset: 3px;
+  border-radius: 3px;
 }

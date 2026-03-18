@@ -24,6 +24,11 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
 
   const filtered = filter === "all" ? photos : photos.filter((p) => p.category === filter);
 
+  // Reset lightbox when filter changes to avoid index out-of-bounds
+  useEffect(() => {
+    setLightboxIndex(null);
+  }, [filter]);
+
   const openLightbox = (index: number) => setLightboxIndex(index);
   const closeLightbox = () => setLightboxIndex(null);
 

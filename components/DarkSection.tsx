@@ -10,10 +10,12 @@ interface DarkSectionProps {
 export default function DarkSection({
   children,
   style,
+  className,
   glowPosition = "30% 50%",
 }: DarkSectionProps) {
   return (
     <section
+      className={className}
       style={{
         backgroundColor: "var(--color-deep-pine)",
         position: "relative",

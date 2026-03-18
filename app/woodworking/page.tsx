@@ -1,12 +1,45 @@
 import type { Metadata } from "next";
 import DarkSection from "@/components/DarkSection";
 import PaymentForm from "@/components/PaymentForm";
+import WoodworkingGallery from "@/components/WoodworkingGallery";
+import type { Piece } from "@/components/WoodworkingGallery";
 
 export const metadata: Metadata = {
   title: "Woodworking — Baldwin Made",
   description:
     "Handtool woodworking by Chris Baldwin — mortise and tenon joinery, hand-cut dovetails, and furniture built to last. Commission a custom piece.",
 };
+
+const pieces: Piece[] = [
+  {
+    src: "/woodworking/coffee table.jpeg",
+    label: "Coffee Table",
+    story:
+      "White oak was a first for me on this one. Beautiful wood, but anyone who works with hand tools knows it'll fight you — dense, unpredictable grain, and unforgiving on dull edges. I cut every mortise and tenon by hand with a backsaw and chisel, tapered the legs with a jack plane, and only ruined one of them. Fortunately I had a backup.\n\nEverything came together well. The joinery was tight, the legs were true, and I was happy with it — even the underside of the top was a little rough, but no one was going to see that.\n\nThen I flipped the top over, attached it, and stood the table up. Something looked off. I'd drilled eight holes through the show face and assembled it upside down.\n\nI couldn't patch it. I had to make the rough side look like the intended side — and I think I pulled it off. Finished with a homemade finish. But I won't be skipping the \"check twice\" step again.",
+    details: "White oak · Mortise & tenon · Hand-planed top · Homemade finish",
+  },
+  {
+    src: "/woodworking/Keepsake box.jpeg",
+    label: "Keepsake Box",
+    story:
+      "This box started with one my uncle made me — a simple dovetailed box he built by hand and gave as a gift. I've kept it for years, and somewhere along the way \"I should build something like that one day\" turned into this.\n\nIt was my first attempt at hand-cut dovetails. The joint that hides nothing — every angle either fits or it doesn't, and you can see exactly which. For a first try, I'm proud of it.\n\nThe box is walnut with a maple lid, finished with a homemade finish. I gave it to my daughter, and she loved it. I hope someday she builds one of her own — and passes that on too.",
+    details: "Walnut & maple · Hand-cut dovetails · Homemade finish",
+  },
+  {
+    src: "/woodworking/serving tray.jpeg",
+    label: "Serving Tray",
+    story:
+      "I had leftover white oak from the coffee table build, and my wife mentioned she wanted a round serving tray. Seemed straightforward enough.\n\nI glued up a panel, broke out the circle-cutting jig, and got a clean, perfect circle. White oak has an open grain, so I grain-filled it — working a paste filler into the pores to get a glassy, level surface before finishing. Applied a homemade finish and handed it over feeling pretty good about it.\n\nShe used it for a week. It's in storage now. Not at all mad about that.",
+    details: "White oak · Grain-filled · Circle jig · Homemade finish",
+  },
+  {
+    src: "/woodworking/side table.jpeg",
+    label: "Side Table",
+    story:
+      "On a trip to Vermont, my wife and I wandered into a fine furniture store filled with pieces made by real craftsmen. She pointed to a tea table and asked if I could build something like it. I said yes before I'd fully thought it through.\n\nBack home, I realized just how far above my skill level this was. The central column — round and tapered — was the problem. That kind of work is typically done on a lathe, which I don't own. So I figured it out with a jack plane and a lot of patience, working the column down by hand until it had the right shape and taper.\n\nIt's sitting in my office now, and it still makes me smile when I see it. I want to build another one someday — I learned enough on this one that I think I could do it better.",
+    details: "Hand-planed tapered column · Mortise & tenon · Homemade finish",
+  },
+];
 
 const process = [
   {
@@ -86,6 +119,47 @@ export default function WoodworkingPage() {
           </p>
         </div>
       </DarkSection>
+
+      {/* ── Gallery ──────────────────────────────────────── */}
+      <section
+        aria-labelledby="gallery-heading"
+        style={{
+          backgroundColor: "var(--color-white)",
+          padding: "var(--space-section) 24px",
+        }}
+      >
+        <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
+          <p
+            style={{
+              fontFamily: "var(--font-body)",
+              fontWeight: 600,
+              fontSize: "0.65rem",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "var(--color-kelly)",
+              margin: "0 0 0.75rem",
+            }}
+          >
+            Recent work
+          </p>
+          <h2
+            id="gallery-heading"
+            style={{
+              fontFamily: "var(--font-display)",
+              fontWeight: 400,
+              fontSize: "var(--text-4xl)",
+              color: "var(--color-deep-pine)",
+              fontStyle: "italic",
+              lineHeight: 1.15,
+              margin: "0 0 3rem",
+            }}
+          >
+            Built by hand
+          </h2>
+
+          <WoodworkingGallery pieces={pieces} />
+        </div>
+      </section>
 
       {/* ── The craft ────────────────────────────────────── */}
       <section

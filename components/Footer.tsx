@@ -2,12 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-const navLinks = [
-  { href: "/product",     label: "Product" },
-  { href: "/photography", label: "Photography" },
-  { href: "/woodworking", label: "Woodworking" },
-  { href: "/about",       label: "About" },
-];
+import { navLinks } from "@/lib/nav-links";
 
 function IconLinkedIn() {
   return (

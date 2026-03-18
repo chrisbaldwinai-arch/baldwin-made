@@ -6,12 +6,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const navLinks = [
-  { href: "/product",     label: "Product" },
-  { href: "/photography", label: "Photography" },
-  { href: "/woodworking", label: "Woodworking" },
-  { href: "/about",       label: "About" },
-];
+import { navLinks } from "@/lib/nav-links";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);

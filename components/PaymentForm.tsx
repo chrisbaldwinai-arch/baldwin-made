@@ -61,7 +61,7 @@ function CheckoutForm({ amount, invoiceNumber }: { amount: number; invoiceNumber
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `${window.location.origin}/woodworking/payment-success`,
+        return_url: `${window.location.origin}/payment-success`,
       },
       redirect: "if_required",
     });

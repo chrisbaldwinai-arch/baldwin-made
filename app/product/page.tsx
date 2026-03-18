@@ -61,7 +61,6 @@ async function fetchRSSArticles(
 ): Promise<Article[]> {
   try {
     const res = await fetch(feedUrl, {
-      next: { revalidate: 86400 },
       headers: { "User-Agent": "BaldwinMade/1.0" },
     });
     if (!res.ok) return [];
